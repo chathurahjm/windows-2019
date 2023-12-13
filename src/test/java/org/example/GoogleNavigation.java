@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 public class GoogleNavigation {
     @Test
     public void testActions() {
-        // Setup WebDriverManager for Chrome
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+
 
         // Create a WebDriver instance (ChromeDriver)
         WebDriver driver = new ChromeDriver();
