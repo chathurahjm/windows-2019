@@ -12,8 +12,8 @@ public class GoogleNavigation {
     
     @Test
     public void testActions() {
-        //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        //WebDriverManager.chromedriver().setup();
 
 
         // Create a WebDriver instance (ChromeDriver)
