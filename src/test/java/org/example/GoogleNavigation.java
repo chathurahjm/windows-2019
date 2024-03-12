@@ -7,13 +7,17 @@ import org.testng.annotations.Test;
 
 @Test
 public class GoogleNavigation {
+
+    protected WebDriver driver;
+    
     @Test
     public void testActions() {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        WebDriverManager.chromedriver().setup();
 
 
         // Create a WebDriver instance (ChromeDriver)
-        WebDriver driver = new ChromeDriver();
+         driver = new ChromeDriver();
 
         // Navigate to Google
         driver.get("https://www.google.com");
