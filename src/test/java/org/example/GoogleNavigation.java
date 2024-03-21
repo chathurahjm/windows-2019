@@ -47,7 +47,7 @@ public class GoogleNavigation {
         //WebDriverManager.chromedriver().setup();
 
          ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
+        //chromeOptions.addArguments("--headless");
 
         // Set headless mode
         chromeOptions.addArguments("--disable-web-security");
