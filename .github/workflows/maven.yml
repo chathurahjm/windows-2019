@@ -27,6 +27,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+
         
    
     # - name: Download Chrome and ChromeDriver
@@ -40,6 +41,10 @@ jobs:
 
     - name: Install xorg-x11-server-Xvfb
       run: sudo apt-get install xvfb -y
+
+      # Start Xvfb
+    - name: Start Xvfb
+      run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
         
     - name: Download ChromeDriver
       run: | 
