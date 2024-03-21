@@ -15,9 +15,14 @@ public class GoogleNavigation {
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         //WebDriverManager.chromedriver().setup();
 
+         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+
+        // Set headless mode
+        chromeOptions.addArguments("--disable-web-security");
 
         // Create a WebDriver instance (ChromeDriver)
-         driver = new ChromeDriver();
+         driver = new ChromeDriver(chromeOptions);
 
         // Navigate to Google
         driver.get("https://www.google.com");
