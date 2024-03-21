@@ -38,6 +38,9 @@ jobs:
     #       wget -q -O /tmp/chrome.deb "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}-1_amd64.deb"
     #       sudo dpkg -i /tmp/chrome.deb || sudo apt-get -f install -y
 
+    - name: Install xorg-x11-server-Xvfb
+      run: sudo apt-get install xorg-x11-server-Xvfb -y
+        
     - name: Download ChromeDriver
       run: | 
           
@@ -54,7 +57,6 @@ jobs:
           unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip
           sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
           sudo chmod +x /usr/local/bin/chromedriver
-          sudo yum install xorg-x11-server-Xvfb 
           # CHROMEDRIVER_VERSION=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
           # wget -q -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
           # sudo unzip -o /tmp/chromedriver.zip -d /usr/local/bin/
