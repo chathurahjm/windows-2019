@@ -41,10 +41,15 @@ jobs:
 
     - name: Download ChromeDriver
       run: | 
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          
+          # Download Chrome version 114.0.5735.90
+          wget -q "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_114.0.5735.90-1_amd64.deb" -O chrome.deb
+          # Install Chrome
+          sudo dpkg -i chrome.deb
+          # Install dependencies
+          sudo apt-get install -f
+          # Clean up
+          rm chrome.deb
           LATEST_CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
           wget "https://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -P ~/
           unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip
