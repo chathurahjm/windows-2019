@@ -39,7 +39,7 @@ jobs:
     #       sudo dpkg -i /tmp/chrome.deb || sudo apt-get -f install -y
 
     - name: Install xorg-x11-server-Xvfb
-      run: sudo apt-get install xorg-x11-server-Xvfb -y
+      run: sudo apt-get install xvfb -y
         
     - name: Download ChromeDriver
       run: | 
