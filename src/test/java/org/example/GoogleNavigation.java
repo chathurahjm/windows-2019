@@ -23,7 +23,7 @@ public class GoogleNavigation {
     //     chromeOptions.addArguments("--headless");
 
     //     // Set headless mode
-    //     chromeOptions.addArguments("--disable-web-security");
+    //    // chromeOptions.addArguments("--disable-web-security");
 
     //     // Create a WebDriver instance (ChromeDriver)
     //      driver = new ChromeDriver(chromeOptions);
@@ -50,7 +50,7 @@ public class GoogleNavigation {
         //chromeOptions.addArguments("--headless");
 
         // Set headless mode
-        chromeOptions.addArguments("--disable-web-security");
+        //chromeOptions.addArguments("--disable-web-security");
 
         // Create a WebDriver instance (ChromeDriver)
          driver = new ChromeDriver(chromeOptions);
@@ -58,7 +58,7 @@ public class GoogleNavigation {
         // Navigate to Google
            driver.get("https://www.youtube.com/@day2day/playlists");
 
-            //Thread.sleep(8000); // Sleep
+            Thread.sleep(8000); // Sleep
             WebElement element = driver.findElement(By.xpath("(//*[@class='yt-simple-endpoint style-scope ytd-playlist-thumbnail'])[4]"));
 
             // Simulate pressing the space button on the element
