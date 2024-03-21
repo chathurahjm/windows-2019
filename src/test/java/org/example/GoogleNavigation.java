@@ -24,5 +24,6 @@ public class GoogleNavigation {
 
         // Close the browser
         driver.quit();
+        
     }
 }
