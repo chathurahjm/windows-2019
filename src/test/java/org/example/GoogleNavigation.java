@@ -13,28 +13,7 @@ import org.openqa.selenium.By;
 public class GoogleNavigation {
 
     protected WebDriver driver;
-    
-    // @Test
-    // public void testActions() {
-    //     System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-    //     //WebDriverManager.chromedriver().setup();
 
-    //      ChromeOptions chromeOptions = new ChromeOptions();
-    //     chromeOptions.addArguments("--headless");
-
-    //     // Set headless mode
-    //    // chromeOptions.addArguments("--disable-web-security");
-
-    //     // Create a WebDriver instance (ChromeDriver)
-    //      driver = new ChromeDriver(chromeOptions);
-
-    //     // Navigate to Google
-    //     driver.get("https://www.google.com");
-
-    //     // Close the browser
-    //     driver.quit();
-        
-    // }
     @Test
     public void testActions()throws InterruptedException {
 
@@ -44,31 +23,52 @@ public class GoogleNavigation {
 
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-        //WebDriverManager.chromedriver().setup();
 
-         ChromeOptions chromeOptions = new ChromeOptions();
+        ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless");
+        driver = new ChromeDriver(chromeOptions);
 
-        // Set headless mode
-        //chromeOptions.addArguments("--disable-web-security");
-
-        // Create a WebDriver instance (ChromeDriver)
-         driver = new ChromeDriver(chromeOptions);
-
-        // Navigate to Google
            driver.get("https://www.youtube.com/@day2day/playlists");
 
             Thread.sleep(8000); // Sleep
+             takeScreenHSot();
             WebElement element = driver.findElement(By.xpath("(//*[@class='yt-simple-endpoint style-scope ytd-playlist-thumbnail'])[4]"));
 
             // Simulate pressing the space button on the element
             element.click();
+               takeScreenHSot();
             Thread.sleep(900000); // Sleep for 1 second
+               takeScreenHSot();
             Thread.sleep(900000); // Sleep for 1 second
 
-
+  takeScreenHSot();
             driver.quit();
         
     }
+    }
+
+    public void takeScreenHSot()
+    {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+
+        LocalDateTime currentTime = LocalDateTime.now();
+
+        // Define a formatter for the desired format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH_mm_ss");
+
+        // Format the current time as a string
+        String currentTimeAsString = currentTime.format(formatter);
+
+        // Define the path to save the screenshot
+        Path destination = Paths.get(System.getProperty("user.dir") + "\\screenshots\\" + currentTimeAsString + ".png");
+
+        try {
+            // Copy screenshot to the destination
+            Files.copy(source.toPath(), destination);
+            System.out.println("Screenshot taken");
+        } catch (IOException e) {
+            System.out.println("Exception while taking screenshot: " + e.getMessage());
+        }
     }
 }
