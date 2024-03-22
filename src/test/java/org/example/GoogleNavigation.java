@@ -41,13 +41,13 @@ public class GoogleNavigation {
                takeScreenHSot();
             Thread.sleep(900000); // Sleep for 1 second
 
-  takeScreenHSot();
+              takeScreenHSot();
             driver.quit();
         
     }
     }
 
-    public void takeScreenHSot()
+   public void takeScreenHhot()
     {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
