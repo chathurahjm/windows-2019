@@ -33,7 +33,7 @@ public class GoogleNavigation {
 
         long startTime = System.currentTimeMillis();
 
-         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(17)) {
+         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(24)) {
 
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
@@ -75,7 +75,7 @@ public class GoogleNavigation {
         String currentTimeAsString = currentTime.format(formatter);
 
         // Define the path to save the screenshot
-        Path destination = Paths.get(System.getProperty("user.dir") + "\\screenshots\\" + currentTimeAsString + ".png");
+        Path destination = Paths.get(System.getProperty("user.dir") + "/screenshots/" + currentTimeAsString + ".png");
 
         try {
             // Copy screenshot to the destination
