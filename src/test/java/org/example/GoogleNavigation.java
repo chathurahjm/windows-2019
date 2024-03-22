@@ -31,17 +31,17 @@ public class GoogleNavigation {
            driver.get("https://www.youtube.com/@day2day/playlists");
 
             Thread.sleep(8000); // Sleep
-             takeScreenHSot();
+            takeScreenHhot();
             WebElement element = driver.findElement(By.xpath("(//*[@class='yt-simple-endpoint style-scope ytd-playlist-thumbnail'])[4]"));
 
             // Simulate pressing the space button on the element
             element.click();
-               takeScreenHSot();
+            takeScreenHhot();
             Thread.sleep(900000); // Sleep for 1 second
-               takeScreenHSot();
+            takeScreenHhot();
             Thread.sleep(900000); // Sleep for 1 second
 
-              takeScreenHSot();
+            takeScreenHhot();
             driver.quit();
         
     }
