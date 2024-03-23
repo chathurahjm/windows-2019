@@ -42,7 +42,6 @@ jobs:
     - name: Install xorg-x11-server-Xvfb
       run: | 
             sudo apt-get install xvfb -y
-            sudo apt-get install xfs xfonts-scalable xfonts-100dpi -y
 
       # Start Xvfb
     - name: Start Xvfb
