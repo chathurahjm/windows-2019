@@ -33,7 +33,7 @@ public class GoogleNavigation {
 
         long startTime = System.currentTimeMillis();
 
-         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(24)) {
+         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(1)) {
 
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
@@ -80,7 +80,9 @@ public class GoogleNavigation {
         try {
             // Copy screenshot to the destination
             Files.copy(source.toPath(), destination);
-            System.out.println("Screenshot taken");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  Screenshot taken");
+            System.out.println(System.getProperty("user.dir"));
+                        System.out.println(destination.toString());
         } catch (IOException e) {
             System.out.println("Exception while taking screenshot: " + e.getMessage());
         }
