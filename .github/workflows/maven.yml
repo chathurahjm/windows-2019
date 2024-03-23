@@ -81,7 +81,7 @@ jobs:
       run: mvn clean install -B
 
     - name: test with Maven
-      run: xvfb-run --server-args="-screen 0, 1024x768x24" mvn -B clean test
+      #run: xvfb-run --server-args="-screen 0, 1024x768x24" mvn -B clean test
       #run: mvn -B clean test
 
     - name: Commit and Push Changes
