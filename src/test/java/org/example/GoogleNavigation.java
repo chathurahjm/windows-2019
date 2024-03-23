@@ -33,13 +33,13 @@ public class GoogleNavigation {
 
         long startTime = System.currentTimeMillis();
 
-         while (System.currentTimeMillis() - startTime < TimeUnit.MINUTES.toMillis(3)) {
+         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(5)) {
 
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--user-agent=Mozilla/5.0 (CrKey armv7l 1.5.16041) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.0 Safari/537.36");
+        chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
 
         chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
@@ -52,11 +52,9 @@ public class GoogleNavigation {
 
             // Simulate pressing the space button on the element
             element.click();
-            takeScreenHhot();
-            //Thread.sleep(900000); // Sleep for 1 second
-             Thread.sleep(3000); // Sleep for 1 second
-            takeScreenHhot();
-            Thread.sleep(3000); // Sleep for 1 second
+            Thread.sleep(900000); // Sleep for 1 second
+             //Thread.sleep(3000); // Sleep for 1 second
+            Thread.sleep(900000); // Sleep for 1 second
 
             takeScreenHhot();
             driver.quit();
