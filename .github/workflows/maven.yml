@@ -40,11 +40,14 @@ jobs:
     #       sudo dpkg -i /tmp/chrome.deb || sudo apt-get -f install -y
 
     - name: Install xorg-x11-server-Xvfb
-      run: sudo apt-get install xvfb -y
+      run: | 
+            sudo apt-get install xvfb -y
+            sudo apt-get install xfs xfonts-scalable xfonts-100dpi -y
 
       # Start Xvfb
     - name: Start Xvfb
       run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+      
         
     - name: Download ChromeDriver
       run: | 
@@ -79,8 +82,8 @@ jobs:
       run: mvn clean install -B
 
     - name: test with Maven
-      #run: xvfb-run mvn -B clean test
-      run: mvn -B clean test
+      run: xvfb-run --server-args="-screen 0, 1024x768x24" mvn -B clean test
+      #run: mvn -B clean test
 
     - name: Commit and Push Changes
       run: |
