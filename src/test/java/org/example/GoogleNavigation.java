@@ -39,6 +39,8 @@ public class GoogleNavigation {
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Linux; Android 6.0; HTC One M9 Build/MRA58K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36");
+
         chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
 
