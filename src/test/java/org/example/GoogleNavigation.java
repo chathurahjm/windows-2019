@@ -33,7 +33,7 @@ public class GoogleNavigation {
 
         long startTime = System.currentTimeMillis();
 
-         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(5)) {
+         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(6)) {
 
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
