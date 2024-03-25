@@ -33,7 +33,7 @@ jobs:
             sudo apt install openvpn
             ls
             dir
-            sudo openvpn /home/runner/work/gitActionWindows/gitActionWindows/src/data/data.ovpn
+            sudo openvpn ".src/data/data.ovpn"
             
 
       # Start Xvfb
