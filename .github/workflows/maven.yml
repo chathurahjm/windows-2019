@@ -27,20 +27,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-        
-   
-    # - name: Download Chrome and ChromeDriver
-    #   run: |
-    #       CHROME_VERSION="114.0.5735.90"
-    #       CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION:0:2}")
-          
-    #       # Download and install Chrome
-    #       wget -q -O /tmp/chrome.deb "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}-1_amd64.deb"
-    #       sudo dpkg -i /tmp/chrome.deb || sudo apt-get -f install -y
 
     - name: Install xorg-x11-server-Xvfb
       run: | 
-            sudo apt-get install xvfb -y
+            apt update && apt -y install ca-certificates wget net-tools gnupg
+            wget https://as-repository.openvpn.net/as-repo-public.asc -qO /etc/apt/trusted.gpg.d/as-repository.asc
+            echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/as-repository.asc] http://as-repository.openvpn.net/as/debian jammy main">/etc/apt/sources.list.d/openvpn-as-repo.list
 
       # Start Xvfb
     - name: Start Xvfb
