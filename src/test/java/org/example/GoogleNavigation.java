@@ -30,12 +30,12 @@ public class GoogleNavigation {
 
 
 
-    //@Test
+    @Test
     public void whatisMyIP()throws InterruptedException {
 
         long startTime = System.currentTimeMillis();
 
-         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(6)) {
+         while (System.currentTimeMillis() - startTime < TimeUnit.SECONDS.toMillis(50000)) {
 
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
@@ -47,15 +47,15 @@ public class GoogleNavigation {
         driver = new ChromeDriver(chromeOptions);
 
            driver.get("https://whatismyipaddress.com/");
- Thread.sleep(3000)
- takeScreenHhot();
+         Thread.sleep(3000)
+        takeScreenHhot();
             driver.quit();
         
     }
     }
 
 
-    @Test
+    //@Test
     public void testActions()throws InterruptedException {
 
         long startTime = System.currentTimeMillis();
