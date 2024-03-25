@@ -34,6 +34,7 @@ jobs:
             cd src
             cd data
             ls
+            sudo killall openvpn
 
             sudo chmod a+rwx /etc/openvpn
             sudo touch /etc/openvpn/credentials
