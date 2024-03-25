@@ -31,7 +31,9 @@ jobs:
       run: | 
             sudo apt update
             sudo apt install openvpn
-            sudo openvpn /home/runner/work/gitActionWIthScreenShots/src/data/data.ovpn
+            ls
+            dir
+            sudo openvpn /home/runner/work/gitActionWindows/gitActionWindows/src/data/data.ovpn
             
 
       # Start Xvfb
