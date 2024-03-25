@@ -47,7 +47,7 @@ public class GoogleNavigation {
         driver = new ChromeDriver(chromeOptions);
 
            driver.get("https://whatismyipaddress.com/");
-         Thread.sleep(3000)
+         Thread.sleep(3000);
         takeScreenHhot();
             driver.quit();
         
