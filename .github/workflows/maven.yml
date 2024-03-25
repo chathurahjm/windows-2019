@@ -34,9 +34,8 @@ jobs:
             cd src
             cd data
             ls
-            sudo killall openvpn
 
-            sudo chmod a+rwx /etc/openvpn
+            sudo chmod -R 777 /etc/openvpn
             sudo touch /etc/openvpn/credentials
             sudo printf '%s\n' 'vpnbook' 'mbr7ahx' > /etc/openvpn/credentials
             sudo sed -i 's/auth-user-pass/auth-user-pass \/etc\/openvpn\/credentials/g' data.ovpn
