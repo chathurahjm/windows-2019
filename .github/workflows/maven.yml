@@ -31,9 +31,10 @@ jobs:
       run: | 
             sudo apt update
             sudo apt install openvpn
+            cd src
+            cd data
             ls
-            dir
-            sudo openvpn ".src/data/data.ovpn"
+            sudo openvpn data.ovpn
             
 
       # Start Xvfb
