@@ -30,7 +30,7 @@ public class GoogleNavigation {
 
 
 
-    @Test
+    //@Test
     public void whatisMyIP()throws InterruptedException {
 
         long startTime = System.currentTimeMillis();
@@ -55,7 +55,7 @@ public class GoogleNavigation {
     }
 
 
-    //@Test
+    @Test
     public void testActions()throws InterruptedException {
 
         long startTime = System.currentTimeMillis();
