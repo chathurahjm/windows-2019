@@ -38,7 +38,7 @@ jobs:
             sudo chmod -R 777 /etc/openvpn
             #sudo touch /etc/openvpn/credentials
             #sudo printf '%s\n' 'vpnbook' 'mbr7ahx' > /etc/openvpn/credentials
-            sudo sed -i 's/auth-user-pass/auth-user-pass credentials/g' data.ovpn
+            sudo sed -i 's/auth-user-pass/auth-user-pass credentials/g' data.ovpn &
 
             sudo openvpn data.ovpn
             
