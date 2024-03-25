@@ -34,8 +34,8 @@ jobs:
             cd src
             cd data
             ls
-            sudo sh -c 'echo clock_hctosys=\"YES\" >> /etc/conf.d/hwclock'
 
+            sudo chown -R openvpn:openvpn /etc/openvpn
             sudo touch /etc/openvpn/credentials
             sudo printf '%s\n' 'vpnbook' 'mbr7ahx' > /etc/openvpn/credentials
             sudo sed -i 's/auth-user-pass/auth-user-pass \/etc\/openvpn\/credentials/g' data.ovpn
