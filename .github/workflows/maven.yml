@@ -51,7 +51,6 @@ jobs:
         
     - name: Download ChromeDriver
       run: | 
-          if: failure() == true
           # Download Chrome version 114.0.5735.90
           wget -q "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_114.0.5735.90-1_amd64.deb" -O chrome.deb
           # Install Chrome
