@@ -27,22 +27,22 @@ jobs:
         cache: maven
 
 
-    # - name: Install VPN
-    #   run: | 
-    #         sudo apt update
-    #         sudo apt install openvpn
-    #         cd src
-    #         cd data
-    #         ls
+     - name: Install VPN
+       run: | 
+             sudo apt update
+             sudo apt install openvpn
+             cd src
+             cd data
+             ls
 
-    #         sudo chmod -R 777 /etc/openvpn
-    #         #sudo touch /etc/openvpn/credentials
-    #         #sudo printf '%s\n' 'vpnbook' 'mbr7ahx' > /etc/openvpn/credentials
-    #         sudo sed -i 's/auth-user-pass/auth-user-pass credentials/g' data.ovpn
+             sudo chmod -R 777 /etc/openvpn
+             #sudo touch /etc/openvpn/credentials
+             #sudo printf '%s\n' 'vpnbook' 'mbr7ahx' > /etc/openvpn/credentials
+             sudo sed -i 's/auth-user-pass/auth-user-pass credentials/g' data.ovpn
 
-    #         sudo nohup openvpn data.ovpn &
-    #         curl ifconfig.me
-            
+             sudo nohup openvpn data.ovpn &
+             curl ifconfig.me
+
 
       # Start Xvfb
     - name: Start Xvfb
