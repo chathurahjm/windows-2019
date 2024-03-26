@@ -27,7 +27,7 @@ public class GoogleNavigation {
 
 
 
-    @Test
+    //@Test
     public void whatisMyIP()throws InterruptedException {
 
         long startTime = System.currentTimeMillis();
@@ -52,39 +52,39 @@ public class GoogleNavigation {
     }
 
 
-    // //@Test
-    // public void testActions()throws InterruptedException {
+    @Test
+    public void testActions()throws InterruptedException {
 
-    //     long startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
 
-    //      while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(6)) {
+         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(6)) {
 
        
-    //     System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
-    //     ChromeOptions chromeOptions = new ChromeOptions();
-    //     chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
 
-    //     chromeOptions.addArguments("--headless");
-    //     driver = new ChromeDriver(chromeOptions);
+        chromeOptions.addArguments("--headless");
+        driver = new ChromeDriver(chromeOptions);
 
-    //        driver.get("https://www.youtube.com/@day2day/playlists");
+           driver.get("https://www.youtube.com/@day2day/playlists");
 
-    //         Thread.sleep(8000); // Sleep
-    //         takeScreenHhot();
-    //         WebElement element = driver.findElement(By.xpath("(//*[@class='yt-simple-endpoint style-scope ytd-playlist-thumbnail'])[4]"));
+            Thread.sleep(8000); // Sleep
+            takeScreenHhot();
+            WebElement element = driver.findElement(By.xpath("(//*[@class='yt-simple-endpoint style-scope ytd-playlist-thumbnail'])[4]"));
 
-    //         // Simulate pressing the space button on the element
-    //         element.click();
-    //         Thread.sleep(900000); // Sleep for 1 second
-    //          //Thread.sleep(3000); // Sleep for 1 second
-    //         Thread.sleep(900000); // Sleep for 1 second
+            // Simulate pressing the space button on the element
+            element.click();
+            Thread.sleep(900000); // Sleep for 1 second
+             //Thread.sleep(3000); // Sleep for 1 second
+            Thread.sleep(900000); // Sleep for 1 second
 
-    //         takeScreenHhot();
-    //         driver.quit();
+            takeScreenHhot();
+            driver.quit();
         
-    // }
-    // }
+    }
+    }
 
    public void takeScreenHhot()
     {
