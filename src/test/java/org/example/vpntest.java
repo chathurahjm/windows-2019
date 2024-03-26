@@ -55,6 +55,42 @@ public class vpntest {
        
     }
 
+    @Test
+    public void testscreen() throws InterruptedException {
+        long startTime = System.currentTimeMillis();
+
+        while (System.currentTimeMillis() - startTime < TimeUnit.SECONDS.toMillis(10)) {
+
+
+            String osName = System.getProperty("os.name").toLowerCase();
+            if (osName.contains("windows"))
+            {
+                WebDriverManager.chromedriver().setup();
+
+                //ChromeOptions chromeOptions = new ChromeOptions();
+            }
+            else {
+
+
+                System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+                System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  OS");
+
+
+            }
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
+
+            chromeOptions.addArguments("--headless");
+            driver = new ChromeDriver(chromeOptions);
+
+            driver.get("https://whatismyipaddress.com/");
+            Thread.sleep(3000);
+            takeScreenHhot();
+            driver.quit();
+
+        }
+    }
+
 
     public void takeScreenHhot() {
         TakesScreenshot ts = (TakesScreenshot) driver;
