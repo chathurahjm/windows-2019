@@ -87,7 +87,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    if: failure() = true
+    if: failure() == true
 
     steps:
      - name: Commit and Push Changes
