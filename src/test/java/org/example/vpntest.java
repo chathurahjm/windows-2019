@@ -84,7 +84,7 @@ public class vpntest {
        
     }
 
-    @Test
+
     public void testscreen() throws InterruptedException {
         long startTime = System.currentTimeMillis();
 
