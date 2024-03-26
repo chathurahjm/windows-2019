@@ -27,8 +27,8 @@ jobs:
         cache: maven
 
 
-     - name: Install VPN
-       run: | 
+    - name: Install VPN
+      run: | 
              sudo apt update
              sudo apt install openvpn
              cd src
