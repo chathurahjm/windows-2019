@@ -78,7 +78,7 @@ public class vpntest {
         {
             System.out.println(e.toString());
         }
-             testscreen();
+            takeScreenHhot();
         
     }
        
