@@ -26,7 +26,6 @@ public class GoogleNavigation {
     protected WebDriver driver;
 
 
-
      @Test
     public void whatisMyIP()throws InterruptedException {
 
