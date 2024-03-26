@@ -82,7 +82,7 @@ jobs:
 
     - name: test with Maven
       run: sudo xvfb-run -a mvn -B clean test
-      if: failure() == true  # Skip the job if the 'build' job failed
+      if: failure() != true  # Skip the job if the 'build' job failed
 
 
     - name: Commit and Push Changes
