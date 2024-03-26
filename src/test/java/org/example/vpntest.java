@@ -43,6 +43,17 @@ public class vpntest {
 
             Thread.sleep(8000); // Sleep
             takeScreenHhot();
+
+            try {
+                WebElement ck = driver.findElement(By.xpath("//input[@type='checkbox']"));
+                ck.click();
+            }
+            catch (Exception e)
+            {
+                System.out.println(e.toString());
+            }
+
+             Thread.sleep(8000); // Sleep
             WebElement element = driver.findElement(By.xpath("(//*[@class='yt-simple-endpoint style-scope ytd-playlist-thumbnail'])[4]"));
 
             // Simulate pressing the space button on the element
