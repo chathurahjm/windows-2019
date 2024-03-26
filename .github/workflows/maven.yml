@@ -81,8 +81,7 @@ jobs:
     #   run: mvn clean install -B
 
     - name: test with Maven
-      run: sudo xvfb-run -a mvn -B clean test
-      if: failure() != true  # Skip the job if the 'build' job failed
+      run: sudo xvfb-run -a mvn -B clean test --fail-at-end
 
 
     - name: Commit and Push Changes
