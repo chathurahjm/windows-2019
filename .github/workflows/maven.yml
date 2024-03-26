@@ -78,8 +78,8 @@ jobs:
     - name: Verify installation
       run: chromedriver --version
     
-    - name: Build with Maven
-      run: mvn clean install -B
+    # - name: Build with Maven
+    #   run: mvn clean install -B
 
     - name: test with Maven
       run: sudo xvfb-run -a mvn -B clean test
