@@ -46,7 +46,7 @@ public class vpntest {
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
 
-            //chromeOptions.addArguments("--headless");
+            chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
 
             driver.get("https://whatismyipaddress.com/");
