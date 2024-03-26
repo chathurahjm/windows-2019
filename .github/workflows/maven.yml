@@ -95,4 +95,9 @@ jobs:
             # Display output
     - run: echo "Changes committed and pushed successfully"
 
+    - name: Archive Jacoco reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: jacoco-reports
+        path: /home/runner/work/gitActionWindows/gitActionWindows/screenshots/
 
