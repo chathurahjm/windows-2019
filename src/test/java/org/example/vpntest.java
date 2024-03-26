@@ -40,6 +40,9 @@ public class vpntest {
              chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
 
+        try {
+
+
         //chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
 
@@ -51,10 +54,12 @@ public class vpntest {
             try {
                 WebElement ck = driver.findElement(By.xpath("//input[@type='checkbox']"));
                 ck.click();
+                takeScreenHhot();
             }
             catch (Exception e)
             {
                 System.out.println(e.toString());
+                takeScreenHhot();
             }
 
              Thread.sleep(8000); // Sleep
@@ -68,6 +73,12 @@ public class vpntest {
 
             takeScreenHhot();
             driver.quit();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.toString());
+        }
+             testscreen();
         
     }
        
