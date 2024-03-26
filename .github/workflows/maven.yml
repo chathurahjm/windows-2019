@@ -81,10 +81,12 @@ jobs:
     #   run: mvn clean install -B
 
     - name: test with Maven
+      id: mvncmd
       run: sudo xvfb-run -a mvn -B clean test --fail-at-end
 
 
     - name: Commit and Push Changes
+      if: steps.mvncmd.outcome != 'success'
       run: |
             git config --global user.email "actions@github.com"
             git config --global user.name "GitHub Actions"
