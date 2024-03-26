@@ -82,7 +82,7 @@ jobs:
     #   run: mvn clean install -B
 
     - name: test with Maven
-      run: mvn -B clean test
+      run: sudo xvfb-run -a mvn -B clean test
 
     - name: Commit and Push Changes
       run: |

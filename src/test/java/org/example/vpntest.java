@@ -25,7 +25,7 @@ public class vpntest {
     public void testActions2() throws InterruptedException {
   long startTime = System.currentTimeMillis();
 
-         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(6)) {
+         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(5)) {
 
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
@@ -33,7 +33,7 @@ public class vpntest {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
 
-        chromeOptions.addArguments("--headless");
+        //chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
 
            driver.get("https://www.youtube.com/@day2day/playlists");
