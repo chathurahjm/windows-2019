@@ -29,7 +29,7 @@ public class vpntest {
     public void testActions2() throws InterruptedException {
   long startTime = System.currentTimeMillis();
 
-         while (System.currentTimeMillis() - startTime < TimeUnit.MINUTES.toMillis(3)) {
+        // while (System.currentTimeMillis() - startTime < TimeUnit.MINUTES.toMillis(3)) {
 
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
@@ -80,7 +80,7 @@ public class vpntest {
         }
             takeScreenHhot();
         
-    }
+    //}
        
     }
 
