@@ -3,10 +3,14 @@ package org.example;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -131,4 +135,35 @@ public class vpntest {
             System.out.println("Exception while taking screenshot: " + e.getMessage());
         }
     }
+
+    @AfterTest
+    public static void commitAndPushChanges() throws IOException, InterruptedException {
+        // Setting up Git commands
+        String[] commands = {
+                "git", "config", "--global", "user.email", "actions@github.com",
+                "git", "config", "--global", "user.name", "GitHub Actions",
+                "git", "add", "/home/runner/work/gitActionWindows/gitActionWindows/screenshots/",
+                "git", "commit", "-m", "Automatically updated GitHub Actions workflow",
+                "git", "push"
+        };
+
+        // Running Git commands
+        ProcessBuilder processBuilder = new ProcessBuilder(commands);
+        processBuilder.redirectErrorStream(true);
+        Process process = processBuilder.start();
+
+        // Reading output
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+
+        // Waiting for the process to finish
+        int exitCode = process.waitFor();
+        if (exitCode != 0) {
+            throw new RuntimeException("Git command failed with exit code: " + exitCode);
+        }
+    }
+
 }
