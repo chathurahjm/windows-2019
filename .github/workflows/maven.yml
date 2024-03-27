@@ -87,7 +87,7 @@ jobs:
     - name: Copy out file from volume
       if: always()
       run: |
-       mkdir /home/linux
+       sudo mkdir /home/linux
        sudo cp -r /home/runner/work/gitActionWindows/gitActionWindows/screenshots/* /home/linux/
 
     - name: Commit and Push Changes
