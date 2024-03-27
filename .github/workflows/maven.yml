@@ -84,6 +84,10 @@ jobs:
       id: mvncmd
       run: sudo xvfb-run -a mvn -B clean test --fail-at-end
 
+    - name: Copy out file from volume
+      run: |
+       mkdir /home/linux
+       sudo cp -r /home/runner/work/gitActionWindows/gitActionWindows/screenshots/* /home/linux/
 
     - name: Commit and Push Changes
       if: always()      
@@ -102,5 +106,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: jacoco-reports
-        path: /home/runner/work/gitActionWindows/gitActionWindows/screenshots/
+        path: /home/linux/
 

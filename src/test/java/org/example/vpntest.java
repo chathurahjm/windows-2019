@@ -183,9 +183,9 @@ public class vpntest {
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "false");
+        props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.port", "456");
 
         // Get the Session object.
         Session session = Session.getInstance(props,
