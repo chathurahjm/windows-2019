@@ -90,6 +90,7 @@ jobs:
       run: |
             git config --global user.email "actions@github.com"
             git config --global user.name "GitHub Actions"
+            git update-index --chmod=+x /home/runner/work/gitActionWindows/gitActionWindows/screenshots/
             git add /home/runner/work/gitActionWindows/gitActionWindows/screenshots/
             git commit -m "Automatically updated GitHub Actions workflow"
             git push
