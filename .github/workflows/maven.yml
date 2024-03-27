@@ -89,6 +89,7 @@ jobs:
       run: |
        sudo mkdir /home/linux
        sudo cp -r /home/runner/work/gitActionWindows/gitActionWindows/screenshots/* /home/linux/
+       sudo chmod 777 /home/linux/
 
     - name: Commit and Push Changes
       if: always()      
