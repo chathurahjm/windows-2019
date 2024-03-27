@@ -88,7 +88,24 @@ public class vpntest {
                 takeScreenHhot("Inexception");
             }
 
-             Thread.sleep(8000); // Sleep
+            Thread.sleep(8000); // Sleep
+
+
+            try {
+                WebElement cookies = driver.findElement(By.xpath("(//input[@value='Accept all'])[1]"));
+                if(cookies.isDisplayed())
+                {
+                    cookies.click();
+                    Thread.sleep(8000); // Sleep
+                    takeScreenHhot("cookies");
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
             WebElement element = driver.findElement(By.xpath("(//*[@class='yt-simple-endpoint style-scope ytd-playlist-thumbnail'])[4]"));
 
             // Simulate pressing the space button on the element
