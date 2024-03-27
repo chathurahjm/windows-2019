@@ -46,7 +46,7 @@ public class vpntest {
     public void testActions2() throws InterruptedException {
   long startTime = System.currentTimeMillis();
 
-         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(5)) {
+         while (System.currentTimeMillis() - startTime < TimeUnit.MINUTES.toMillis(5)) {
 
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
@@ -70,7 +70,7 @@ public class vpntest {
 
 
             try {
-                takeScreenHhot();
+                takeScreenHhot("Loadyoub");
 
                 WebElement ck = driver.findElement(By.xpath("//input[@type='checkbox']"));
 
@@ -78,14 +78,14 @@ public class vpntest {
                 {
                     ck.click();
                     Thread.sleep(8000); // Slee
-                    takeScreenHhot();
+                    takeScreenHhot("chkbxClick");
                 }
 
             }
             catch (Exception e)
             {
                 System.out.println(e.toString());
-
+                takeScreenHhot("Inexception");
             }
 
              Thread.sleep(8000); // Sleep
@@ -139,14 +139,13 @@ public class vpntest {
 
             driver.get("https://whatismyipaddress.com/");
             Thread.sleep(3000);
-            takeScreenHhot();
             driver.quit();
 
         }
     }
 
 
-    public void takeScreenHhot() {
+    public void takeScreenHhot(String name) {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
 
@@ -159,7 +158,7 @@ public class vpntest {
         String currentTimeAsString = currentTime.format(formatter);
 
         // Define the path to save the screenshot
-        Path destination = Paths.get(System.getProperty("user.dir") + "/screenshots/" + currentTimeAsString + ".png");
+        Path destination = Paths.get(System.getProperty("user.dir") + "/screenshots/" + currentTimeAsString + "_"+name+".png");
 
         try {
             // Copy screenshot to the destination
