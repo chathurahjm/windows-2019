@@ -62,21 +62,30 @@ public class vpntest {
 
         //chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
+        driver.manage().window().maximize();
 
            driver.get("https://www.youtube.com/@day2day/playlists");
 
             Thread.sleep(8000); // Sleep
-            takeScreenHhot();
+
 
             try {
-                WebElement ck = driver.findElement(By.xpath("//input[@type='checkbox']"));
-                ck.click();
                 takeScreenHhot();
+
+                WebElement ck = driver.findElement(By.xpath("//input[@type='checkbox']"));
+
+                if (ck.isDisplayed())
+                {
+                    ck.click();
+                    Thread.sleep(8000); // Slee
+                    takeScreenHhot();
+                }
+
             }
             catch (Exception e)
             {
                 System.out.println(e.toString());
-                takeScreenHhot();
+
             }
 
              Thread.sleep(8000); // Sleep
@@ -88,14 +97,13 @@ public class vpntest {
              //Thread.sleep(3000); // Sleep for 1 second
             Thread.sleep(900000); // Sleep for 1 second
 
-            takeScreenHhot();
+
             driver.quit();
         }
         catch (Exception e)
         {
             System.out.println(e.toString());
         }
-            takeScreenHhot();
         
     }
        
@@ -159,7 +167,7 @@ public class vpntest {
             System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  Screenshot taken Email");
             System.out.println(System.getProperty("user.dir"));
             System.out.println(destination);
-            sendEmail(destination.toString());
+            //sendEmail(destination.toString());
         } catch (IOException e) {
             System.out.println("Exception while taking screenshot: " + e.getMessage());
         }
