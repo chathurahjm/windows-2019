@@ -16,9 +16,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import java.util.Properties;
+import java.util.HashMap;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -48,6 +50,8 @@ public class vpntest {
 
          while (System.currentTimeMillis() - startTime < TimeUnit.MINUTES.toMillis(5)) {
 
+
+
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
@@ -55,8 +59,10 @@ public class vpntest {
              chromeOptions.addArguments("--disable-extensions");
              chromeOptions.addArguments("--disable-gpu");
              chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
-
+             chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
+             Map prefs = new HashMap();
+             prefs.put("profile.default_content_settings.cookies", 2);
+             chromeOptions.setExperimentalOption("prefs", prefs);
         try {
 
 
