@@ -8,10 +8,15 @@ name: Java CI with Maven
 
 
 on:
+  schedule:
+    - cron:  '0 */4 * * *'    # At every 15th minute
+
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    
+    
 
 jobs:
   build:
