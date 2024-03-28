@@ -15,7 +15,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -26,6 +26,15 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Install ChromeDriver
+      run: |
+          Invoke-WebRequest "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" -OutFile "latest.txt"
+          $LatestVersion = Get-Content -Path "latest.txt"
+          Invoke-WebRequest "https://chromedriver.storage.googleapis.com/$LatestVersion/chromedriver_win32.zip" -OutFile "chromedriver.zip"
+          Expand-Archive -Path "chromedriver.zip" -DestinationPath .
+          Move-Item -Path ".\chromedriver.exe" -Destination "$env:ProgramFiles (x86)\chromedriver\"
+          $env:Path += ";$env:ProgramFiles (x86)\chromedriver"
+          
 
     - name: Install VPN
       run: | 
@@ -91,18 +100,6 @@ jobs:
        sudo cp -r /home/runner/work/gitActionWindows/gitActionWindows/screenshots/* /home/linux/
        sudo chown -R runner:runner /home/linux/
        pwd
-
-    - name: Commit and Push Changes
-      if: always()      
-      run: |
-            sudo git config --global user.email "actions@github.com"
-            sudo git config --global user.name "GitHub Actions"
-            //git update-index --chmod=+x /home/runner/work/gitActionWindows/gitActionWindows/screenshots/
-            sudo git add /home/runner/work/gitActionWindows/gitActionWindows/screenshots/
-            sudo git commit -m "Automatically updated GitHub Actions workflow"
-            sudo git push
-            # Display output
-    - run: echo "Changes committed and pushed successfully"
 
     - name: Archive Jacoco reports
       if: always()
