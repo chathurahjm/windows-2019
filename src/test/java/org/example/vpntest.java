@@ -202,7 +202,7 @@ public class vpntest {
             System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  Screenshot taken Email");
             System.out.println(System.getProperty("user.dir"));
             System.out.println(destination);
-            sendEmail(destination.toString());
+            //sendEmail(destination.toString());
         } catch (IOException e) {
             System.out.println("Exception while taking screenshot: " + e.getMessage());
         }
