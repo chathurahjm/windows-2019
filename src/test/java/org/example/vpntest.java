@@ -49,7 +49,7 @@ public class vpntest {
          while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(5)) {
 
 
-
+             ChromeOptions chromeOptions = new ChromeOptions();
             String osName = System.getProperty("os.name").toLowerCase();
             if (osName.contains("windows"))
             {
@@ -60,9 +60,6 @@ public class vpntest {
             else {
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-           
-
-        ChromeOptions chromeOptions = new ChromeOptions();
              chromeOptions.addArguments("--disable-extensions");
              chromeOptions.addArguments("--disable-gpu");
              chromeOptions.addArguments("--no-sandbox");
