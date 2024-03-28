@@ -69,26 +69,30 @@ public class vpntest {
             Thread.sleep(8000); // Sleep
 
 
-            try {
-                takeScreenHhot("Loadyoub");
+//            try {
+//                takeScreenHhot("Loadyoub");
+//
+//                WebElement ck = driver.findElement(By.xpath("//input[@type='checkbox']"));
+//
+//                if (ck.isDisplayed())
+//                {
+//                    ck.click();
+//                    Thread.sleep(8000); // Slee
+//                    takeScreenHhot("chkbxClick");
+//                }
+//
+//            }
+//            catch (Exception e)
+//            {
+//                System.out.println(e.toString());
+//                takeScreenHhot("Inexception");
+//            }
 
-                WebElement ck = driver.findElement(By.xpath("//input[@type='checkbox']"));
 
-                if (ck.isDisplayed())
-                {
-                    ck.click();
-                    Thread.sleep(8000); // Slee
-                    takeScreenHhot("chkbxClick");
-                }
-
-            }
-            catch (Exception e)
-            {
-                System.out.println(e.toString());
-                takeScreenHhot("Inexception");
-            }
-
-            Thread.sleep(8000); // Sleep
+            String a = driver.getCurrentUrl().toString();
+            System.out.println(a);
+            String page = driver.getPageSource();
+            System.out.println(page);
 
 
             try {
