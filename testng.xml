@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true" name="C:/Users/chath/.m2/repository/io/github/bonigarcia/webdrivermanager/gitAction_demo">
         <classes>
             <class name="org.example.vpntest">
-                <methods><include name="testActions2"/></methods>
+                <methods><include name="testActions211"/></methods>
             </class>
         </classes>
     </test>
