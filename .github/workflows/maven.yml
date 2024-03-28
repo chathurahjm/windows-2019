@@ -77,13 +77,13 @@ jobs:
       id: mvncmd
       run: mvn -B clean test --fail-at-end
 
-    - name: Copy out file from volume
-      if: always()
-      run: |
-       sudo mkdir /home/linux
-       sudo cp -r /home/runner/work/gitActionWindows/gitActionWindows/screenshots/* /home/linux/
-       sudo chown -R runner:runner /home/linux/
-       pwd
+    # - name: Copy out file from volume
+    #   if: always()
+    #   run: |
+    #    sudo mkdir /home/linux
+    #    sudo cp -r /home/runner/work/gitActionWindows/gitActionWindows/screenshots/* /home/linux/
+    #    sudo chown -R runner:runner /home/linux/
+    #    pwd
 
     - name: Archive Jacoco reports
       if: always()
