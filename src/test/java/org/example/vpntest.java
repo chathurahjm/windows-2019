@@ -46,7 +46,7 @@ public class vpntest {
     public void testActions2() throws InterruptedException {
   long startTime = System.currentTimeMillis();
 
-         while (System.currentTimeMillis() - startTime < TimeUnit.MINUTES.toMillis(5)) {
+         while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(5)) {
 
 
 
@@ -125,7 +125,7 @@ public class vpntest {
             Thread.sleep(900000); // Sleep for 1 second
              //Thread.sleep(3000); // Sleep for 1 second
             Thread.sleep(900000); // Sleep for 1 second
-            takeScreenHhot("cookies");
+            takeScreenHhot("beforeclose");
 
             driver.quit();
         }
