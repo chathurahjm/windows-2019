@@ -50,14 +50,24 @@ public class vpntest {
 
 
 
+            String osName = System.getProperty("os.name").toLowerCase();
+            if (osName.contains("windows"))
+            {
+                WebDriverManager.chromedriver().setup();
+
+                //ChromeOptions chromeOptions = new ChromeOptions();
+            }
+            else {
        
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+           
 
         ChromeOptions chromeOptions = new ChromeOptions();
              chromeOptions.addArguments("--disable-extensions");
              chromeOptions.addArguments("--disable-gpu");
              chromeOptions.addArguments("--no-sandbox");
              chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
+            }
 //             Map prefs = new HashMap();
 //             prefs.put("profile.default_content_settings.cookies", 2);
 //             chromeOptions.setExperimentalOption("prefs", prefs);
@@ -195,7 +205,7 @@ public class vpntest {
             System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  Screenshot taken Email");
             System.out.println(System.getProperty("user.dir"));
             System.out.println(destination);
-            //sendEmail(destination.toString());
+            sendEmail(destination.toString());
         } catch (IOException e) {
             System.out.println("Exception while taking screenshot: " + e.getMessage());
         }
@@ -219,9 +229,9 @@ public class vpntest {
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "false");
+        props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", "25");
+        props.put("mail.smtp.port", "587");
 
         // Get the Session object.
         Session session = Session.getInstance(props,
