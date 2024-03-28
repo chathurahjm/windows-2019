@@ -63,12 +63,12 @@ jobs:
     #          curl ifconfig.me
 
          
-    - name: Check Chrome Version
-      run: google-chrome --version
+    # - name: Check Chrome Version
+    #   run: google-chrome --version
 
 
-    - name: Verify installation
-      run: chromedriver --version
+    # - name: Verify installation
+    #   run: chromedriver --version
     
     # - name: Build with Maven
     #   run: mvn clean install -B
