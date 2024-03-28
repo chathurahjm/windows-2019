@@ -3,24 +3,22 @@ package org.example;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import java.util.Properties;
-import java.util.HashMap;
+
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -120,10 +118,14 @@ public class vpntest {
 
             // Simulate pressing the space button on the element
             element.click();
+            takeScreenHhot("clickPlalit");
+            Thread.sleep(3000);
+            takeScreenHhot("clickPlalitSleep");
+
             Thread.sleep(900000); // Sleep for 1 second
              //Thread.sleep(3000); // Sleep for 1 second
             Thread.sleep(900000); // Sleep for 1 second
-
+            takeScreenHhot("cookies");
 
             driver.quit();
         }
