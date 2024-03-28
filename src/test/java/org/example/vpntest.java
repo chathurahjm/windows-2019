@@ -43,7 +43,7 @@ public class vpntest {
 
 
     @Test
-    public void testActions2() throws InterruptedException {
+    public void testActions21() throws InterruptedException {
   long startTime = System.currentTimeMillis();
 
          while (System.currentTimeMillis() - startTime < TimeUnit.HOURS.toMillis(5)) {
@@ -136,8 +136,8 @@ public class vpntest {
        
     }
 
-
-    public void testscreen() throws InterruptedException {
+@Test
+    public void testActions2() throws InterruptedException {
         long startTime = System.currentTimeMillis();
 
         while (System.currentTimeMillis() - startTime < TimeUnit.SECONDS.toMillis(10)) {
@@ -166,6 +166,7 @@ public class vpntest {
 
             driver.get("https://whatismyipaddress.com/");
             Thread.sleep(3000);
+            takeScreenHhot("ip");
             driver.quit();
 
         }
