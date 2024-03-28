@@ -95,8 +95,6 @@ public class vpntest {
 
             String a = driver.getCurrentUrl().toString();
             System.out.println(a);
-            String page = driver.getPageSource();
-            System.out.println(page);
 
 
             try {
