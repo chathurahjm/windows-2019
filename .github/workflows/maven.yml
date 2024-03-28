@@ -30,65 +30,39 @@ jobs:
     - name: install VPN
       run: choco install openvpn
 
-    - name: install CHromeDriver
-      run: choco install selenium-chrome-driver
+    # - name: install CHromeDriver
+    #   run: choco install selenium-chrome-driver
 
-    - name: install CHromeDriver
-      run: choco install googlechrome --version 114.0.5735.90
+    # - name: install CHromeDriver
+    #   run: choco install googlechrome --version 114.0.5735.90
 
-    - name: Install ChromeDriver
-      run: |
-          Invoke-WebRequest "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" -OutFile "latest.txt"
-          $LatestVersion = Get-Content -Path "latest.txt"
-          Invoke-WebRequest "https://chromedriver.storage.googleapis.com/$LatestVersion/chromedriver_win32.zip" -OutFile "chromedriver.zip"
-          Expand-Archive -Path "chromedriver.zip" -DestinationPath .
-          Move-Item -Path ".\chromedriver.exe" -Destination "$env:ProgramFiles (x86)\chromedriver\"
-          $env:Path += ";$env:ProgramFiles (x86)\chromedriver"
+    # - name: Install ChromeDriver
+    #   run: |
+    #       Invoke-WebRequest "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" -OutFile "latest.txt"
+    #       $LatestVersion = Get-Content -Path "latest.txt"
+    #       Invoke-WebRequest "https://chromedriver.storage.googleapis.com/$LatestVersion/chromedriver_win32.zip" -OutFile "chromedriver.zip"
+    #       Expand-Archive -Path "chromedriver.zip" -DestinationPath .
+    #       Move-Item -Path ".\chromedriver.exe" -Destination "$env:ProgramFiles (x86)\chromedriver\"
+    #       $env:Path += ";$env:ProgramFiles (x86)\chromedriver"
           
 
-    - name: Install VPN
-      run: | 
-             sudo apt update
-             sudo apt install openvpn
-             cd src
-             cd data
-             ls
+    # - name: Install VPN
+    #   run: | 
+    #          sudo apt update
+    #          sudo apt install openvpn
+    #          cd src
+    #          cd data
+    #          ls
 
-             sudo chmod -R 777 /etc/openvpn
-             #sudo touch /etc/openvpn/credentials
-             #sudo printf '%s\n' 'vpnbook' 'mbr7ahx' > /etc/openvpn/credentials
-             sudo sed -i 's/auth-user-pass/auth-user-pass credentials/g' data.ovpn
+    #          sudo chmod -R 777 /etc/openvpn
+    #          #sudo touch /etc/openvpn/credentials
+    #          #sudo printf '%s\n' 'vpnbook' 'mbr7ahx' > /etc/openvpn/credentials
+    #          sudo sed -i 's/auth-user-pass/auth-user-pass credentials/g' data.ovpn
 
-             sudo nohup openvpn data.ovpn &
-             curl ifconfig.me
+    #          sudo nohup openvpn data.ovpn &
+    #          curl ifconfig.me
 
-
-      # Start Xvfb
-    - name: Start Xvfb
-      run: Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-      
-        
-    - name: Download ChromeDriver
-      run: | 
-          # Download Chrome version 114.0.5735.90
-          wget -q "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_114.0.5735.90-1_amd64.deb" -O chrome.deb
-          # Install Chrome
-          sudo dpkg -i chrome.deb
-          # Install dependencies
-          sudo apt-get install -f
-          # Clean up
-          rm chrome.deb
-          LATEST_CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
-          wget "https://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -P ~/
-          unzip ~/chromedriver_linux64.zip -d ~/ && rm ~/chromedriver_linux64.zip
-          sudo mv -f ~/chromedriver /usr/local/bin/chromedriver
-          sudo chmod +x /usr/local/bin/chromedriver
-          # CHROMEDRIVER_VERSION=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-          # wget -q -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-          # sudo unzip -o /tmp/chromedriver.zip -d /usr/local/bin/
-          # sudo chmod +x /usr/local/bin/chromedriver
-
-
+         
     - name: Check Chrome Version
       run: google-chrome --version
 
@@ -101,7 +75,7 @@ jobs:
 
     - name: test with Maven
       id: mvncmd
-      run: sudo xvfb-run -a mvn -B clean test --fail-at-end
+      run: mvn -B clean test --fail-at-end
 
     - name: Copy out file from volume
       if: always()
