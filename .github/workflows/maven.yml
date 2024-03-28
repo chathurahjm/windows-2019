@@ -27,6 +27,15 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: install VPN
+      run: choco install openvpn
+
+    - name: install CHromeDriver
+      run: choco install selenium-chrome-driver
+
+    - name: install CHromeDriver
+      run: choco install googlechrome --version 114.0.5735.90
+
     - name: Install ChromeDriver
       run: |
           Invoke-WebRequest "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" -OutFile "latest.txt"
