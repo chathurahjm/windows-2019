@@ -90,5 +90,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: jacoco-reports
-        path: /home/linux/
+        path: D:\a\gitActionWindows2\gitActionWindows2\screenshots\
 
