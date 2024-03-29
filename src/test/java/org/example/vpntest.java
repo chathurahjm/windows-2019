@@ -73,7 +73,8 @@ public class vpntest {
          chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.27 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/601.1.27");
         //chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
-        driver.manage().window().maximize();
+            Dimension dimension = new Dimension(1296, 700);
+            driver.manage().window().setSize(dimension);
 
            driver.get("https://www.youtube.com/@day2day/playlists");
 
