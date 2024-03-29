@@ -63,14 +63,14 @@ public class vpntest {
              chromeOptions.addArguments("--disable-extensions");
              chromeOptions.addArguments("--disable-gpu");
              chromeOptions.addArguments("--no-sandbox");
-             chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
+            
             }
 //             Map prefs = new HashMap();
 //             prefs.put("profile.default_content_settings.cookies", 2);
 //             chromeOptions.setExperimentalOption("prefs", prefs);
         try {
 
-
+         chromeOptions.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.27 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/601.1.27");
         //chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
