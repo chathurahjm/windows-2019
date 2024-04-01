@@ -94,6 +94,6 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v3
       with:
-        name: jacoco-reports
+        name: jacoco-reports_$(date +'%Y-%m-%dT%H:%M:%S')
         path: D:\a\gitActionWindows2\gitActionWindows2\screenshots\
 
