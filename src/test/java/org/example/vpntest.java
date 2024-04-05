@@ -124,10 +124,9 @@ public class vpntest {
 
             // Simulate pressing the space button on the element
             element.click();
-            takeScreenHhot("clickPlalit");
-            Thread.sleep(3000);
-            takeScreenHhot("clickPlalitSleep");
-
+           
+Thread.sleep(900000); // Sleep for 1 second
+            Thread.sleep(900000); // Sleep for 1 second
             Thread.sleep(900000); // Sleep for 1 second
              //Thread.sleep(3000); // Sleep for 1 second
             Thread.sleep(900000); // Sleep for 1 second
